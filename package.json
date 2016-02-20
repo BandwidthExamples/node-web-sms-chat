@@ -19,7 +19,7 @@
     "koa": "^1.1.2",
     "koa-formidable": "^1.0.0",
     "koa-static": "^2.0.0",
-    "node-bandwidth": "^1.2.4",
+    "node-bandwidth": "https://github.com/bandwidthcom/node-bandwidth.git#fix-media-upload",
     "promisify-patch": "^1.0.10",
     "ws": "^1.0.1"
   }
