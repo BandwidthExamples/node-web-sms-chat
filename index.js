@@ -11,6 +11,7 @@ const koaStatic = require("koa-static");
 const http = require("http");
 const formidable = require("koa-formidable");
 const fs = require("fs");
+const path = require("path");
 
 require("promisify-patch").patch();
 
@@ -97,7 +98,7 @@ commands["signIn"] = function*(message, socket){
    if(!phoneNumber){
      debug("Reserving new phone number on Catapult");
      let number = ((yield catapult.AvailableNumber.searchLocal.bind(catapult.AvailableNumber)
-      .promise(client, {city: "Cary", state: "NC", quantity: 1}))[0] || {}).number;
+      .promise(client, {areaCode: "910", quantity: 1}))[0] || {}).number;
      yield catapult.PhoneNumber.create.bind(catapult.PhoneNumber).promise(client, {number: number, applicationId: applicationId});
      phoneNumber = number;
    }
@@ -160,7 +161,8 @@ app.use(function*(next){
     if(this.request.path === "/upload"){
       debug("Uploading file");
       let file = (yield formidable.parse(this)).files.file;
-      let fileName = Math.random().toString(36).substring(5);
+      let ext = (path.extname(file.name) || "").toLocaleLowerCase();
+      let fileName = Math.random().toString(36).substring(5) + ext;
       let auth = JSON.parse(this.request.headers.authorization);
       yield catapult.Media.upload.bind(catapult.Media).promise(new catapult.Client(auth), fileName, file.path, file.type);
       yield fs.unlink.promise(file.path);
