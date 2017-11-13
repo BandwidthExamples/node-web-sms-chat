@@ -1,4 +1,9 @@
-#node-web-sms-chat
+<div align="center">
+
+# Node Web SMS Chat
+
+<a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
+</div>
 
 NodeJS backend for web-based chat application that features Catapult SMS and MMS capabilities.
 
@@ -8,6 +13,8 @@ Demos uses of the:
 * [Searching for Phone Number](http://ap.bandwidth.com/docs/rest-api/available-numbers/#resourceGETv1availableNumberslocal/?utm_medium=social&utm_source=github&utm_campaign=dtolb&utm_content=_)
 * [Ordering Phone Number](http://ap.bandwidth.com/docs/rest-api/phonenumbers/#resourcePOSTv1usersuserIdphoneNumbers/?utm_medium=social&utm_source=github&utm_campaign=dtolb&utm_content=_)
 * [Messaging REST Api Callbacks](http://ap.bandwidth.com/docs/callback-events/text-messages-sms/?utm_medium=social&utm_source=github&utm_campaign=dtolb&utm_content=_)
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Prerequisites
 - Configured Machine with Ngrok/Port Forwarding -OR- Heroku Account
