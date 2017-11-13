@@ -2,7 +2,7 @@
 
 # Node Web SMS Chat
 
-<a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
+<a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW_Messaging.png"/></a>
 </div>
 
 NodeJS backend for web-based chat application that features Catapult SMS and MMS capabilities.
